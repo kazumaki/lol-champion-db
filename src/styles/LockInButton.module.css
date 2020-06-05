@@ -1,0 +1,13 @@
+.button {
+  background-image: url('../images/button-lockin.png');
+  background-size: 100% 100%;
+  width: 300px;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+}
+
+.button:hover {
+  background-image: url('../images/button-lockin-hover.png');
+  background-size: 100% 100%;
+}

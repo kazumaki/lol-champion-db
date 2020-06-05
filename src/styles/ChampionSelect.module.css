@@ -4,6 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url('../images/plugins/skin-splash-darken.png'), url('../images/plugins/bg.jpg');
+  background-image: url('../images/skin-splash-darken.png'), url('../images/bg.jpg');
   background-size: 100% 100%;
 }

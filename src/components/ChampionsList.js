@@ -24,7 +24,7 @@ class ChampionsList extends React.Component {
     const { champions } = this.props;
 
     return (
-      <div className={style.container}>
+      <div className={`${style.container} ${style.scrollStyle}`}>
         {champions.data.map( champion => <MiniChampion key={champion.name} champion={champion} />)}
       </div>
     )
