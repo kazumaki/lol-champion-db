@@ -1,5 +1,9 @@
 .container {
   display: flex;
-  max-width: 600px;
+  width: 705px;
+  height: 550px;
+  overflow-x: hidden;
+  overflow-y: scroll;
   flex-wrap: wrap;
+  align-content: flex-start;
 }

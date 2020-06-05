@@ -1,0 +1,9 @@
+.container {
+  width: 900px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('../images/plugins/skin-splash-darken.png'), url('../images/plugins/bg.jpg');
+  background-size: 100% 100%;
+}

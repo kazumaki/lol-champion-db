@@ -11,7 +11,6 @@ class ChampionsList extends React.Component {
 
   componentDidMount() {
     const { requestChampions } = this.props;
-    console.log(requestChampions);
     requestChampions();
   }
 
@@ -23,10 +22,10 @@ class ChampionsList extends React.Component {
 
   render() {
     const { champions } = this.props;
-    console.log(champions.data);
+
     return (
       <div className={style.container}>
-        {champions.data.map( champion => <MiniChampion champion={champion} />)}
+        {champions.data.map( champion => <MiniChampion key={champion.name} champion={champion} />)}
       </div>
     )
   }

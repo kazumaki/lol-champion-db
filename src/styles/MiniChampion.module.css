@@ -2,9 +2,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 108px;
+  height: 108px;
+  padding: 10px 15px;
+  margin-top: 10px;
 }
 
 .image {
-  width: 48px;
-  height: 48px;
+  width: 74px;
+  height: 74px;
+  padding: 10px;
+}
+
+.champion:hover {
+  background-image: url('../images/plugins/champion-hover.png');
+  background-size: 100% 100%;
 }

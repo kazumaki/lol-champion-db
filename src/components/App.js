@@ -7,19 +7,17 @@ import {
 } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
-import ChampionsList from './ChampionsList';
-import SearchChampionForm from "./SearchChampionForm";
+import ChampionSelect from './ChampionSelect';
+import style from '../styles/App.module.css';
 
 const App = () => {
   return (
     <Router>
       <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
         <Route path="/champions">
-          <SearchChampionForm />
-          <ChampionsList />
+          <div className={style.container}>
+            <ChampionSelect />
+          </div>
         </Route>
         <Route path="/">
           <Home />
