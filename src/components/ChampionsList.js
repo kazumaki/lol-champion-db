@@ -1,6 +1,6 @@
 import React from 'react';
-import { addChampion } from '../actions';
 import { connect } from 'react-redux';
+import { addChampion } from '../actions';
 import MiniChampion from './MiniChampion';
 
 class ChampionsList extends React.Component {
@@ -32,7 +32,6 @@ class ChampionsList extends React.Component {
 
   render() {
     const { champions } = this.props;
-    console.log(champions);
     return (
       <div>
       {champions.map( champion => <MiniChampion champion={champion} />)}
@@ -49,9 +48,15 @@ const mapDispatchToProps = dispatch => {
 };
 
 const mapStateToProps = state => {
-  return {
-    champions: state.champions,
+  if (state.nameFilter === '') {
+    return {
+      champions: state.champions,
+    };
   }
+
+  const champions = state.champions.filter(champion => champion.name.toLowerCase().startsWith(state.nameFilter));
+  console.log(champions);
+  return {champions};
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChampionsList);

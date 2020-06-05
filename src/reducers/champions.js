@@ -1,4 +1,4 @@
-import { ADD_CHAMPION } from '../actions/champions';
+import { ADD_CHAMPION } from '../actions';
 
 const champions = (state = [], action) => {
   switch(action.type) {

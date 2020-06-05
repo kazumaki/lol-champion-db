@@ -8,6 +8,7 @@ import {
 import About from "./About";
 import Home from "./Home";
 import ChampionsList from './ChampionsList';
+import SearchChampionForm from "./SearchChampionForm";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
           <About />
         </Route>
         <Route path="/champions">
+          <SearchChampionForm />
           <ChampionsList />
         </Route>
         <Route path="/">
