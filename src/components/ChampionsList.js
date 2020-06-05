@@ -1,27 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { addChampion } from '../actions';
+import { addChampion, requestChampions } from '../actions';
 import MiniChampion from './MiniChampion';
 
 class ChampionsList extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      championData: {},
-    };
   }
 
   componentDidMount() {
-    this.fetchChampions();
-  }
-
-  fetchChampions() {
-    fetch('http://ddragon.leagueoflegends.com/cdn/10.11.1/data/en_US/champion.json')
-      .then(result => result.json())
-      .then(data => {
-        this.receiveChampions(data);
-      })
-      .catch(console.log);
+    const { requestChampions } = this.props;
+    console.log(requestChampions);
+    requestChampions();
   }
 
   receiveChampions(championsData) {
@@ -32,20 +22,21 @@ class ChampionsList extends React.Component {
 
   render() {
     const { champions } = this.props;
+    console.log(champions.status);
     return (
       <div>
-      {champions.map( champion => <MiniChampion champion={champion} />)}
+      {champions.data.map( champion => <MiniChampion champion={champion} />)}
       </div>
     )
   }
 
 }
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addChampion: champion => dispatch(addChampion(champion)),
-  };
-};
+const mapDispatchToProps = dispatch => (
+  {
+    requestChampions: () => requestChampions(dispatch),
+  }
+);
 
 const mapStateToProps = state => {
   if (state.nameFilter === '') {
@@ -54,8 +45,8 @@ const mapStateToProps = state => {
     };
   }
 
-  const champions = state.champions.filter(champion => champion.name.toLowerCase().startsWith(state.nameFilter));
-  console.log(champions);
+  const data = state.champions.data.filter(champion => champion.name.toLowerCase().startsWith(state.nameFilter));
+  const champions = { ...state.champions, data };
   return {champions};
 }
 
