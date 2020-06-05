@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { addChampion, requestChampions } from '../actions';
 import MiniChampion from './MiniChampion';
+import style from '../styles/ChampionsList.module.css'
 
 class ChampionsList extends React.Component {
   constructor(props) {
@@ -22,10 +23,10 @@ class ChampionsList extends React.Component {
 
   render() {
     const { champions } = this.props;
-    console.log(champions.status);
+    console.log(champions.data);
     return (
-      <div>
-      {champions.data.map( champion => <MiniChampion champion={champion} />)}
+      <div className={style.container}>
+        {champions.data.map( champion => <MiniChampion champion={champion} />)}
       </div>
     )
   }

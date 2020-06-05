@@ -1,0 +1,10 @@
+.square {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image {
+  width: 48px;
+  height: 48px;
+}
