@@ -1,7 +1,6 @@
 import { combineReducers } from 'redux';
+import champions from './champions';
 
-const reducinho = (state = 1, action) => state;
-
-const rootReducer = combineReducers({reducinho});
+const rootReducer = combineReducers({ champions });
 
 export default rootReducer;

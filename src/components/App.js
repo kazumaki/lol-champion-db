@@ -7,6 +7,7 @@ import {
 } from "react-router-dom";
 import About from "./About";
 import Home from "./Home";
+import ChampionsList from './ChampionsList';
 
 const App = () => {
   return (
@@ -14,6 +15,9 @@ const App = () => {
       <Switch>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/champions">
+          <ChampionsList />
         </Route>
         <Route path="/">
           <Home />
