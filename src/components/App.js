@@ -8,17 +8,16 @@ import {
 import About from "./About";
 import Home from "./Home";
 import ChampionSelect from './ChampionSelect';
-import style from '../styles/App.module.css';
+import ChampionDetails from "./ChampionDetails";
 
 const App = () => {
   return (
     <Router>
       <Switch>
         <Route path="/champions">
-          <div className={style.container}>
-            <ChampionSelect />
-          </div>
+          <ChampionSelect />
         </Route>
+        <Route path="/champion/:name" component={ChampionDetails} />
         <Route path="/">
           <Home />
         </Route>

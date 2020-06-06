@@ -1,6 +1,6 @@
-import { FETCH_CHAMPIONS_SUCCESS, FETCH_CHAMPIONS_ERROR, FETCH_CHAMPIONS } from '../actions';
+import { FETCH_CHAMPIONS_SUCCESS, FETCH_CHAMPIONS_ERROR, FETCH_CHAMPIONS, CHANGE_SELECTED_CHAMPION } from '../actions';
 
-const champions = (state = { data: [] }, action) => {
+const champions = (state = { data: [], selectedChampion: {}}, action) => {
   switch (action.type) {
     case FETCH_CHAMPIONS_SUCCESS:
       return {
@@ -19,6 +19,12 @@ const champions = (state = { data: [] }, action) => {
       return {
         ...state,
         status: 'fetching',
+      };
+
+    case CHANGE_SELECTED_CHAMPION:
+      return {
+        ...state,
+        selectedChampion: action.selectedChampion,
       };
 
     default:

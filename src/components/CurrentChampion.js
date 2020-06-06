@@ -1,19 +1,27 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import LockInButton from './LockInButton';
 
 class CurrentChampion extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { currentChampion: null };
   }
 
   render() {
+    const { selectedChampion } = this.props;
     return (
       <div>
-        <LockInButton />
+        <h1>{selectedChampion.name}</h1>
+        <LockInButton selectedChampion={selectedChampion} />
       </div>
     )
   }
 }
 
-export default CurrentChampion;
+const mapStateToProps = state => {
+  return {
+    selectedChampion: state.champions.selectedChampion,
+  }
+}
+
+export default connect(mapStateToProps, null)(CurrentChampion);

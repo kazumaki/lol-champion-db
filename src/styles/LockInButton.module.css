@@ -7,7 +7,16 @@
   border: none;
 }
 
+.buttonDisabled {
+  background-image: url('../images/button-lockin-disable.png');
+}
+
 .button:hover {
   background-image: url('../images/button-lockin-hover.png');
+  background-size: 100% 100%;
+}
+
+.buttonDisabled:hover {
+  background-image: url('../images/button-lockin-disable.png');
   background-size: 100% 100%;
 }

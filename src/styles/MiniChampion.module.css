@@ -18,3 +18,9 @@
   background-image: url('../images/champion-hover.png');
   background-size: 100% 100%;
 }
+
+.selected {
+  background-image: url('../images/champion-selected.png') !important;
+  background-size: 100% 100%;
+  opacity: 0.5;
+}

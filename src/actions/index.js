@@ -1,4 +1,5 @@
 export const CHANGE_NAME_FILTER = 'CHANGE_NAME_FILTER';
+export const CHANGE_SELECTED_CHAMPION = 'CHANGE_SELECTED_CHAMPION';
 export const FETCH_CHAMPIONS = 'FETCH_CHAMPIONS';
 export const FETCH_CHAMPIONS_SUCCESS = 'FETCH_CHAMPIONS_SUCCESS';
 export const FETCH_CHAMPIONS_ERROR = 'FETCH_CHAMPIONS_ERROR';
@@ -8,6 +9,13 @@ export const changeNameFilter = filter => (
   {
     type: CHANGE_NAME_FILTER,
     filter,
+  }
+);
+
+export const changeSelectedChampion = champion => (
+  {
+    type: CHANGE_SELECTED_CHAMPION,
+    selectedChampion: champion,
   }
 );
 
