@@ -1,8 +1,9 @@
 import React from 'react';
-import { requestChampions, changeSelectedChampion } from '../actions';
-import MiniChampion from '../components/MiniChampion';
-import ChampionList from '../components/ChampionList';
 import { connect } from 'react-redux';
+import { requestChampions, changeSelectedChampion } from '../actions';
+import ChampionList from '../components/ChampionList';
+import MiniChampionContainer from './MiniChampionContainer';
+import champions from '../reducers/champions';
 
 class ChampionsContainer extends React.Component {
   constructor(props) {
@@ -26,13 +27,13 @@ class ChampionsContainer extends React.Component {
       champion => {
         const selected = champion.name === champions.selectedChampion.name;
         return (
-          <MiniChampion
+          <MiniChampionContainer
             key={champion.name}
             handleChampionClick={this.handleChampionClick}
             champion={champion}
             selected={selected}
           />
-        )
+        );
       },
     );
     return (
@@ -49,17 +50,24 @@ const mapDispatchToProps = dispatch => (
 );
 
 const mapStateToProps = state => {
-  if (state.nameFilter === '') {
-    return {
-      champions: state.champions,
-    };
+  let { data } = state.champions;
+  const { filter } = state;
+
+  if (filter.name !== '') {
+    data = data.filter(
+      champion => champion.name.toLowerCase().startsWith(filter.name),
+    );
   }
 
-  const data = state.champions.data.filter(
-    champion => champion.name.toLowerCase().startsWith(state.nameFilter),
-  );
+  if (filter.tag !== 'All') {
+    data = data.filter(
+      champion => champion.tags.includes(filter.tag),
+    );
+  }
+
   const champions = { ...state.champions, data };
+
   return { champions };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChampionsContainer);

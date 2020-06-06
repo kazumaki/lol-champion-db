@@ -1,9 +1,8 @@
 import React from 'react';
-import style from '../styles/LockInButton.module.css';
 import { Link, Switch, BrowserRouter as Router } from 'react-router-dom';
+import style from '../styles/LockInButton.module.css';
 
 class LockInButton extends React.Component {
-
   constructor(props) {
     super(props);
     this.handleOnClick = this.handleOnClick.bind(this);
@@ -16,7 +15,7 @@ class LockInButton extends React.Component {
   render() {
     const { selectedChampion } = this.props;
     const styles = selectedChampion.name ? style.button : `${style.button} ${style.buttonDisabled}`;
-    const button = <button className={styles}>Lock in</button>
+    const button = <button className={styles}>Lock in</button>;
 
     if (selectedChampion.name) {
       return (
@@ -28,7 +27,7 @@ class LockInButton extends React.Component {
 
     return (
       button
-    )
+    );
   }
 }
 

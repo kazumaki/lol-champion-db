@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import champions from './champions';
-import nameFilter from './nameFilter';
+import filter from './filter';
 
-const rootReducer = combineReducers({ champions, nameFilter });
+const rootReducer = combineReducers({ champions, filter });
 
 export default rootReducer;

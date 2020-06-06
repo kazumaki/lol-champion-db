@@ -14,14 +14,12 @@ class CurrentChampion extends React.Component {
         <h1>{selectedChampion.name}</h1>
         <LockInButton selectedChampion={selectedChampion} />
       </div>
-    )
+    );
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    selectedChampion: state.champions.selectedChampion,
-  }
-}
+const mapStateToProps = state => ({
+  selectedChampion: state.champions.selectedChampion,
+});
 
 export default connect(mapStateToProps, null)(CurrentChampion);

@@ -1,4 +1,5 @@
 export const CHANGE_NAME_FILTER = 'CHANGE_NAME_FILTER';
+export const CHANGE_TAG_FILTER = 'CHANGE_TAG_FILTER';
 export const CHANGE_SELECTED_CHAMPION = 'CHANGE_SELECTED_CHAMPION';
 export const FETCH_CHAMPIONS = 'FETCH_CHAMPIONS';
 export const FETCH_CHAMPIONS_SUCCESS = 'FETCH_CHAMPIONS_SUCCESS';
@@ -8,6 +9,13 @@ export const apiChampions = 'http://ddragon.leagueoflegends.com/cdn/10.11.1/data
 export const changeNameFilter = filter => (
   {
     type: CHANGE_NAME_FILTER,
+    filter,
+  }
+);
+
+export const changeTagFilter = filter => (
+  {
+    type: CHANGE_TAG_FILTER,
     filter,
   }
 );
