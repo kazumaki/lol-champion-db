@@ -1,0 +1,17 @@
+.outerContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container {
+  width: 900px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(253, 216, 142);
+  background-image: url('../images/skin-splash-darken.png'), url('../images/bg.jpg');
+  background-size: 100% 100%;
+}

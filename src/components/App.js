@@ -8,7 +8,7 @@ import {
 import About from './About';
 import Home from './Home';
 import ChampionSelect from './ChampionSelect';
-import ChampionDetails from './ChampionDetails';
+import ChampionDetailsContainer from '../containers/ChampionDetailsContainer';
 
 const App = () => (
   <Router>
@@ -16,7 +16,7 @@ const App = () => (
       <Route path="/champions">
         <ChampionSelect />
       </Route>
-      <Route path="/champion/:name" component={ChampionDetails} />
+      <Route path="/champion/:id" component={ChampionDetailsContainer} />
       <Route path="/">
         <Home />
       </Route>

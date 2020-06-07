@@ -9,9 +9,10 @@ class CurrentChampion extends React.Component {
 
   render() {
     const { selectedChampion } = this.props;
+    console.log(selectedChampion);
     return (
       <div>
-        <h1>{selectedChampion.name}</h1>
+        <h1 style={{textAlign: 'center'}}>{selectedChampion.name || 'N/A'}</h1>
         <LockInButton selectedChampion={selectedChampion} />
       </div>
     );

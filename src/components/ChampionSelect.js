@@ -3,15 +3,14 @@ import SearchChampionForm from './SearchChampionForm';
 import style from '../styles/ChampionSelect.module.css';
 import CurrentChampion from './CurrentChampion';
 import ChampionsContainer from '../containers/ChampionsContainer';
+import OuterContainer from './OuterContainer';
 
 const ChampionSelect = () => (
-  <div className={style.outerContainer}>
-    <div className={style.container}>
-      <SearchChampionForm />
-      <ChampionsContainer />
-      <CurrentChampion />
-    </div>
-  </div>
+  <OuterContainer>
+    <SearchChampionForm />
+    <ChampionsContainer />
+    <CurrentChampion />
+  </OuterContainer>
 );
 
 export default ChampionSelect;

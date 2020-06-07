@@ -19,7 +19,7 @@ class LockInButton extends React.Component {
 
     if (selectedChampion.name) {
       return (
-        <Link to={`/champion/${selectedChampion.name}`}>
+        <Link to={`/champion/${selectedChampion.id}`}>
           { button }
         </Link>
       );
