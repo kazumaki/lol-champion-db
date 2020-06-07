@@ -6,7 +6,7 @@ const MiniChampion = ({
 }) => (
   <div className={`${style.square}`}>
     <img onClick={() => handleChampionClick(champion)} className={styles} src={imageSrc} alt={champion.name} />
-    <span>{champion.name}</span>
+    <span style={{ textAlign: 'center' }}>{champion.name}</span>
   </div>
 );
 

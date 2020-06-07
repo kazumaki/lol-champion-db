@@ -23,7 +23,7 @@ class ChampionsContainer extends React.Component {
 
   render() {
     let { champions } = this.props;
-    champions = champions.data.map(
+    const championsData = champions.data.map(
       champion => {
         const selected = champion.name === champions.selectedChampion.name;
         return (
@@ -37,7 +37,7 @@ class ChampionsContainer extends React.Component {
       },
     );
     return (
-      <ChampionList champions={champions} />
+      <ChampionList champions={championsData} status={champions.status} />
     );
   }
 }

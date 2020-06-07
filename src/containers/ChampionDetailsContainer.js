@@ -1,10 +1,10 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import OuterContainer from '../components/OuterContainer';
 import ChampionDetails from '../components/ChampionDetails';
+import style from '../styles/ChampionDetails.module.css';
 
 class ChampionDetailsContainer extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -28,10 +28,13 @@ class ChampionDetailsContainer extends React.Component {
   render() {
     const { champion, status } = this.state;
 
-    switch(status) {
+    switch (status) {
       case 'success':
         return (
           <OuterContainer>
+            <Link className={style.backLink} to="/champions">
+              <div className={style.backButton} />
+            </Link>
             <ChampionDetails champion={champion} />
           </OuterContainer>
         );
@@ -39,6 +42,9 @@ class ChampionDetailsContainer extends React.Component {
       case 'fetching':
         return (
           <OuterContainer>
+            <Link className={style.backLink} to="/champions">
+              <div className={style.backButton} />
+            </Link>
             <h1>Fetching</h1>
           </OuterContainer>
         );
@@ -46,6 +52,9 @@ class ChampionDetailsContainer extends React.Component {
       case 'error':
         return (
           <OuterContainer>
+            <Link className={style.backLink} to="/champions">
+              <div className={style.backButton} />
+            </Link>
             <h1>Errro</h1>
           </OuterContainer>
         );

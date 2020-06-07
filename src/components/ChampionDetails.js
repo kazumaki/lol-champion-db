@@ -1,14 +1,13 @@
 import React from 'react';
 import OuterContainer from './OuterContainer';
 import style from '../styles/ChampionDetails.module.css';
-import champions from '../reducers/champions';
 
 const ChampionDetails = ({ champion }) => {
   const imageSrc = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`;
   return (
     <OuterContainer>
       <div className={style.container}>
-        <img className={style.loadingImage} src={imageSrc} alt={ champion.id }/>
+        <img className={style.loadingImage} src={imageSrc} alt={champion.id} />
         <div className={style.infoContainer}>
           <h1 className={style.championName}>{ champion.name }</h1>
           <div className={style.infoBox}>
@@ -32,7 +31,7 @@ const ChampionDetails = ({ champion }) => {
         </div>
       </div>
     </OuterContainer>
-  )
-}
+  );
+};
 
 export default ChampionDetails;

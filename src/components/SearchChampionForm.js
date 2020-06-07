@@ -40,7 +40,7 @@ class SearchChampionForm extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => (
-  { 
+  {
     changeNameFilter: name => dispatch(changeNameFilter(name)),
     changeTagFilter: tag => dispatch(changeTagFilter(tag)),
   }

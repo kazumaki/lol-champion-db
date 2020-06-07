@@ -3,7 +3,6 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from 'react-router-dom';
 import About from './About';
 import Home from './Home';
@@ -17,6 +16,9 @@ const App = () => (
         <ChampionSelect />
       </Route>
       <Route path="/champion/:id" component={ChampionDetailsContainer} />
+      <Route path="/about">
+        <About />
+      </Route>
       <Route path="/">
         <Home />
       </Route>

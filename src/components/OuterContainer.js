@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../styles/OuterContainer.module.css'
+import style from '../styles/OuterContainer.module.css';
 
 const OuterContainer = props => {
   const { children } = props;

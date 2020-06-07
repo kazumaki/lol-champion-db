@@ -3,6 +3,7 @@
   background-size: 100% 100%;
   width: 300px;
   height: 100px;
+  color: rgb(253, 216, 142);
   background-color: transparent;
   border: none;
 }
@@ -14,6 +15,7 @@
 .button:hover {
   background-image: url('../images/button-lockin-hover.png');
   background-size: 100% 100%;
+  cursor: pointer;
 }
 
 .buttonDisabled:hover {
