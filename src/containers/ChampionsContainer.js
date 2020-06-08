@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 import { requestChampions, changeSelectedChampion } from '../actions';
 import ChampionList from '../components/ChampionList';
 import MiniChampionContainer from './MiniChampionContainer';
-import champions from '../reducers/champions';
 
 class ChampionsContainer extends React.Component {
   constructor(props) {
@@ -22,7 +22,7 @@ class ChampionsContainer extends React.Component {
   }
 
   render() {
-    let { champions } = this.props;
+    const { champions } = this.props;
     const championsData = champions.data.map(
       champion => {
         const selected = champion.name === champions.selectedChampion.name;
@@ -68,6 +68,24 @@ const mapStateToProps = state => {
   const champions = { ...state.champions, data };
 
   return { champions };
+};
+
+ChampionsContainer.propTypes = {
+  requestChampions: PropTypes.func.isRequired,
+  changeSelectedChampion: PropTypes.func.isRequired,
+  champions: PropTypes.shape(
+    {
+      data: PropTypes.arrayOf(
+        PropTypes.shape(
+          {
+            name: PropTypes.string.isRequired,
+          },
+        ).isRequired,
+      ).isRequired,
+      selectedChampion: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+    },
+  ).isRequired,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ChampionsContainer);

@@ -1,5 +1,5 @@
 import React from 'react';
-import MiniChampion from './MiniChampion';
+import PropTypes from 'prop-types';
 import style from '../styles/ChampionsList.module.css';
 
 const ChampionList = ({ champions, status }) => {
@@ -14,6 +14,13 @@ const ChampionList = ({ champions, status }) => {
     default:
       return <div className={style.loader} />;
   }
+};
+
+ChampionList.propTypes = {
+  champions: PropTypes.arrayOf(
+    PropTypes.instanceOf(React.Component),
+  ).isRequired,
+  status: PropTypes.string.isRequired,
 };
 
 export default ChampionList;

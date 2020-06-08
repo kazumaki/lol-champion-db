@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import OuterContainer from './OuterContainer';
 import style from '../styles/ChampionDetails.module.css';
 
@@ -15,8 +16,8 @@ const ChampionDetails = ({ champion }) => {
             <ul className={style.infoList}>
               <li>{`Attack: ${champion.info.attack}`}</li>
               <li>{`Defense: ${champion.info.defense}`}</li>
-              <li>{`Difficulty: ${champion.info.attack}`}</li>
-              <li>{`Magic: ${champion.info.attack}`}</li>
+              <li>{`Difficulty: ${champion.info.difficulty}`}</li>
+              <li>{`Magic: ${champion.info.magic}`}</li>
             </ul>
           </div>
           <div className={style.infoBox}>
@@ -32,6 +33,31 @@ const ChampionDetails = ({ champion }) => {
       </div>
     </OuterContainer>
   );
+};
+
+ChampionDetails.propTypes = {
+  champion: PropTypes.shape(
+    {
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      info: PropTypes.shape(
+        {
+          attack: PropTypes.string.isRequired,
+          defense: PropTypes.string.isRequired,
+          difficulty: PropTypes.string.isRequired,
+          magic: PropTypes.string.isRequired,
+        },
+      ),
+      stats: PropTypes.shape(
+        {
+          hp: PropTypes.string.isRequired,
+          mp: PropTypes.string.isRequired,
+          attackdamage: PropTypes.string.isRequired,
+          armor: PropTypes.string.isRequired,
+        },
+      ),
+    },
+  ).isRequired,
 };
 
 export default ChampionDetails;

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import OuterContainer from '../components/OuterContainer';
 import ChampionDetails from '../components/ChampionDetails';
 import style from '../styles/ChampionDetails.module.css';
@@ -67,5 +68,16 @@ class ChampionDetailsContainer extends React.Component {
   }
 }
 
+ChampionDetailsContainer.propTypes = {
+  match: PropTypes.shape(
+    {
+      params: PropTypes.shape(
+        {
+          id: PropTypes.string.isRequired,
+        },
+      ).isRequired,
+    },
+  ).isRequired,
+};
 
 export default ChampionDetailsContainer;

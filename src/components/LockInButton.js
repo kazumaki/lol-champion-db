@@ -1,34 +1,22 @@
 import React from 'react';
-import { Link, Switch, BrowserRouter as Router } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import style from '../styles/LockInButton.module.css';
 
-class LockInButton extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleOnClick = this.handleOnClick.bind(this);
-  }
+const LockInButton = ({ selectedChampion }) => {
+  const styles = selectedChampion.name ? style.button : `${style.button} ${style.buttonDisabled}`;
+  const button = <button type="button" className={styles}>Lock in</button>;
 
-  handleOnClick(event) {
-
-  }
-
-  render() {
-    const { selectedChampion } = this.props;
-    const styles = selectedChampion.name ? style.button : `${style.button} ${style.buttonDisabled}`;
-    const button = <button className={styles}>Lock in</button>;
-
-    if (selectedChampion.name) {
-      return (
-        <Link to={`/champion/${selectedChampion.id}`}>
-          { button }
-        </Link>
-      );
-    }
-
+  if (selectedChampion.name) {
     return (
-      button
+      <Link to={`/champion/${selectedChampion.id}`}>
+        { button }
+      </Link>
     );
   }
-}
+
+  return (
+    button
+  );
+};
 
 export default LockInButton;

@@ -1,10 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { changeNameFilter, changeTagFilter } from '../actions';
+import FilterChampionForm from '../components/FilterChampionForm';
 
-const CHAMPION_TAGS = ['All', 'Assassin', 'Fighter', 'Mage', 'Marksman', 'Support', 'Tank'];
-
-class SearchChampionForm extends React.Component {
+class FilterChampionFormContainer extends React.Component {
   constructor(props) {
     super(props);
     this.handleNameChange = this.handleNameChange.bind(this);
@@ -27,14 +27,12 @@ class SearchChampionForm extends React.Component {
   render() {
     const { nameFilter, tagFilter } = this.state;
     return (
-      <form>
-        <input type="text" placeholder="Champion name" value={nameFilter} onChange={this.handleNameChange} />
-        <select value={tagFilter} onChange={this.handleTagChange}>
-          {CHAMPION_TAGS.map(
-            tag => <option key={tag}>{tag}</option>,
-          )}
-        </select>
-      </form>
+      <FilterChampionForm
+        nameFilter={nameFilter}
+        tagFilter={tagFilter}
+        handleNameChange={this.handleNameChange}
+        handleTagChange={this.handleTagChange}
+      />
     );
   }
 }
@@ -46,4 +44,9 @@ const mapDispatchToProps = dispatch => (
   }
 );
 
-export default connect(null, mapDispatchToProps)(SearchChampionForm);
+FilterChampionFormContainer.propTypes = {
+  changeNameFilter: PropTypes.func.isRequired,
+  changeTagFilter: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(FilterChampionFormContainer);

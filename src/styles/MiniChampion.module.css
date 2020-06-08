@@ -24,3 +24,12 @@
   background-size: 100% 100%;
   opacity: 0.5;
 }
+
+.button {
+  border: none;
+  background-color: transparent;
+}
+
+.button:focus {
+  border-color: rgb(253, 216, 142);
+}
