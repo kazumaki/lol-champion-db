@@ -4,7 +4,7 @@ import OuterContainer from './OuterContainer';
 import style from '../styles/ChampionDetails.module.css';
 
 const ChampionDetails = ({ champion }) => {
-  const imageSrc = `http://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`;
+  const imageSrc = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`;
   return (
     <OuterContainer>
       <div className={style.container}>

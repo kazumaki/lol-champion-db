@@ -17,7 +17,7 @@ class ChampionDetailsContainer extends React.Component {
     const { match } = this.props;
     const championId = match.params.id;
 
-    fetch(`http://ddragon.leagueoflegends.com/cdn/10.11.1/data/en_US/champion/${championId}.json`)
+    fetch(`https://ddragon.leagueoflegends.com/cdn/10.11.1/data/en_US/champion/${championId}.json`)
       .then(result => result.json())
       .then(data => {
         this.setState({ champion: data.data[championId], status: 'success' });
