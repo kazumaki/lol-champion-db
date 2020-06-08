@@ -83,7 +83,9 @@ ChampionsContainer.propTypes = {
         ).isRequired,
       ).isRequired,
       selectedChampion: PropTypes.shape(
-        {},
+        {
+          name: PropTypes.string,
+        },
       ),
       status: PropTypes.string.isRequired,
     },

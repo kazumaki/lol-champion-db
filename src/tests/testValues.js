@@ -1,5 +1,5 @@
 import React from 'react';
-import MiniChampionContainer from "./MiniChampionContainer";
+import MiniChampionContainer from './MiniChampionContainer';
 
 const champions = [
   {

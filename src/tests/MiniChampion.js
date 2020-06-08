@@ -6,7 +6,7 @@ const MiniChampion = ({
   styles, imageSrc, champion,
 }) => (
   <div className={`${style.square}`}>
-    <button className={style.button} type="button" onClick={() => handleChampionClick(champion)} onKeyDown={() => handleChampionClick(champion)}>
+    <button className={style.button} type="button">
       <img
         className={styles}
         src={imageSrc}

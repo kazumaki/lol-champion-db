@@ -17,7 +17,7 @@ describe('App standard naviagation', () => {
   test('Insert text into champions name filter', () => {
     const app = render(<App />);
     const input = app.queryByTestId('name-filter');
-    fireEvent.change(input, {target: { value: 'test' } });
+    fireEvent.change(input, { target: { value: 'test' } });
     expect(app.queryByTestId('name-filter').value).toBe('test');
   });
 
