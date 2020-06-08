@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { arrayOf } from 'prop-types';
 import style from '../styles/OuterContainer.module.css';
 
 const OuterContainer = ({ children }) => (

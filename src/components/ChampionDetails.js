@@ -42,18 +42,18 @@ ChampionDetails.propTypes = {
       name: PropTypes.string.isRequired,
       info: PropTypes.shape(
         {
-          attack: PropTypes.string.isRequired,
-          defense: PropTypes.string.isRequired,
-          difficulty: PropTypes.string.isRequired,
-          magic: PropTypes.string.isRequired,
+          attack: PropTypes.number.isRequired,
+          defense: PropTypes.number.isRequired,
+          difficulty: PropTypes.number.isRequired,
+          magic: PropTypes.number.isRequired,
         },
       ),
       stats: PropTypes.shape(
         {
-          hp: PropTypes.string.isRequired,
-          mp: PropTypes.string.isRequired,
-          attackdamage: PropTypes.string.isRequired,
-          armor: PropTypes.string.isRequired,
+          hp: PropTypes.number.isRequired,
+          mp: PropTypes.number.isRequired,
+          attackdamage: PropTypes.number.isRequired,
+          armor: PropTypes.number.isRequired,
         },
       ),
     },

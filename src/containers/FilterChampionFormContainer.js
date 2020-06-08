@@ -9,7 +9,7 @@ class FilterChampionFormContainer extends React.Component {
     super(props);
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handleTagChange = this.handleTagChange.bind(this);
-    this.state = { nameFilter: '' };
+    this.state = { nameFilter: '', tagFilter: '' };
   }
 
   handleNameChange(event) {
