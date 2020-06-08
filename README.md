@@ -91,6 +91,10 @@ The goal when I started working on LoL Champion Database was to fetch the data f
 - Linkedin: [Vinicius Campos Carvalho](https://www.linkedin.com/in/vcamposcarvalho/)
 - Email: [vcampos.pitangui@gmail.com](vcampos.pitangui@gmail.com)
 
+## Presentation
+
+[Video](https://youtu.be/avvIOXrD8JY)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
