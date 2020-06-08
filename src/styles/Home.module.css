@@ -13,6 +13,11 @@
   background-image: url('../images/play-button-lobby-hover.png');
 }
 
+.logo {
+  width: 347px;
+  height: 174px;
+}
+
 .link {
   text-decoration: none;
 }

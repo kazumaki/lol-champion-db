@@ -1,68 +1,143 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LoL Champion Database
 
-## Available Scripts
+LoL Champion Database is a simple SPA that gathers data from League of Legends API and displays it to the user.
 
-In the project directory, you can run:
+## Screenshot
 
-### `yarn start`
+![Screenshot of the webpage](images/app-screenshot.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Live version
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Live version](https://billy-the-jumper.herokuapp.com/)
 
-### `yarn test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the repository into your local computer.
 
-### `yarn build`
+```
+$ git clone https://github.com/kazumaki/billy-the-jumper.git
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installing
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+First, you'll have to install the newest version of [Node](https://nodejs.org/en/download/). Otherwise, the npx command could not be available. Then move into the project main directory on the console and follow the instructions below. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install all packages:
 
-### `yarn eject`
+```
+$ npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Run Webpack:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ npx webpack
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Run local webserver
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+$ npm run start
+```
 
-## Learn More
+Now in your browser type the following address and press enter.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+http://127.0.0.1:8080
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You can instruct webpack to "watch" all files within your dependency graph for changes. If one of these files is updated, the code will be recompiled so you don't have to run the full build manually:
 
-### Code Splitting
+```
+$ npx webpack --watch
+```
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### webpack.config.js
 
-### Analyzing the Bundle Size
+The main file of which the bundle is created is set in the entry:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+```
+entry: './src/index.js'
+```
 
-### Making a Progressive Web App
+The output file of the JavaScript bundle and its name is set in the output:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+```
+output: {
+  filename: 'app.bundle.js',
+  path: path.resolve(__dirname, 'build'),
+},
+```
 
-### Advanced Configuration
+[From Webpack documentation:](https://webpack.js.org/guides/production/) Technically, NODE_ENV is a system environment variable that Node.js exposes into running scripts. It is used by convention to determine dev-vs-prod behavior by server tools, build scripts, and client-side libraries. Contrary to expectations, process.env.NODE_ENV **is not set to "production"** within the build script webpack.config.js. Thus, conditionals like `process.env.NODE_ENV === 'production' ? '[name].[hash].bundle.js' : '[name].bundle.js'` within webpack configurations do not work as expected.
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+### Playing the game
 
-### Deployment
+The goal of the game is simple, you have to jump between platforms and avoid Billy (Goat) to fall.
+#### Jump Commands
+* Spacebar
+* Up Arrow key
+* Left Mouse Button
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+You can jump twice if you press jump command again (Take care to not hold the button and jump twice without necessity).
 
-### `yarn build` fails to minify
+![Profile Image](images/small-keyboard.png) 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### Score system
+Your total score is based on the amount of time you stay alive, for the first 30 seconds, you gain approximately 1 point for each second alive, these values double every 30 seconds, so the next 30 seconds you'll gain 2 point for each second and so on.
+
+The coins also gives 1 point each so don't forget to collect as many as you can.
+
+## Game Development
+
+### Done
+
+The main goal when I started to develop Billy The Jumper was to create a simple platform game with an endless level, and I had to do it in only five days. I came with a lot of ideas in the first brainstorming session that I was unable to add to the game cause of the lack of time. So what I did was focusing on the basic gameplay development on the first three days, where I developed the basic game flow with a jumper character and auto-generated platforms using Phaser physics functionalities helped a lot. In the last two days, I focused on improving the actual game with better graphics and sound effects, like when the character jumps or die, menu hovering or select an option, added some graphics at the background to create the sense of moving, and also implemented high scores system using Leaderboard API system.
+
+### Ideas for improvement
+
+* Add collectibles items that grant buffs
+* Pause system
+* Save options to the localStorage
+* Multiplayer online gameplay
+
+## Built With
+
+* [JavaScript](https://www.javascript.com/) - Programming language used
+* [Phaser 3](https://phaser.io/phaser3) - Canvas and WebGL framework used
+* [Webpack](https://webpack.js.org/) - Bundler used
+* [HTML](https://en.wikipedia.org/wiki/HTML) - Hypertext Markup Language
+* [VS Code](https://code.visualstudio.com/) - The code editor used
+* [Piskel](https://www.piskelapp.com/) - Animated sprite editor
+
+## Assets
+
+* ["LPC Goat" by bluecarrot16](https://opengameart.org/content/lpc-goat) - Goat graphics used
+* ["Happy Loops sounds" by Goose Ninja](https://gooseninja.itch.io/happy-loops) - Loop sounds used
+* ["16 / 8 bit soundpakc" by JDWasabi](https://jdwasabi.itch.io/8-bit-16-bit-sound-effects-pack) - Sound effects used
+* ["Platform Tiles" by Akshay V](https://opengameart.org/content/platformer-tiles-2) - Platform tiles used
+* ["Parallax Mountain Background" by GrumpyDiamond](https://opengameart.org/content/parallax-mountain-background) - Parallax Effect mountain graphics used
+* ["Cute Clouds Game Ornament" by bevouliin.com](https://opengameart.org/content/cute-clouds-game-ornament) - Cloud graphics used
+* ["Rotating Coins" by Puddin](https://opengameart.org/content/rotating-coin) - Coin graphics used 
+## Author
+
+👤 **Vinicius Campos Carvalho**
+
+<a href="https://github.com/kazumaki" rel="noopener noreferrer" target="_blank">
+
+  ![Profile Image](images/vinicius-profile.png) 
+
+</a>
+
+- Github: [@kazumaki](https://github.com/kazumaki)
+- Twitter: [@iKazumaki](https://twitter.com/iKazumaki)
+- Linkedin: [Vinicius Campos Carvalho](https://www.linkedin.com/in/vcamposcarvalho/)
+- Email: [vcampos.pitangui@gmail.com](vcampos.pitangui@gmail.com)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgments
+
+* [Project Requirements page](https://www.notion.so/Platform-game-4a55a7d1fcc245bcb012c76814764712)
