@@ -16,12 +16,8 @@ const App = () => (
         <ChampionSelect />
       </Route>
       <Route path="/champion/:id" component={ChampionDetailsContainer} />
-      <Route path="/about">
-        <About />
-      </Route>
-      <Route path="/">
-        <Home />
-      </Route>
+      <Route path="/about" component={About} />
+      <Route path="/" component={Home} />
     </Switch>
   </Router>
 );

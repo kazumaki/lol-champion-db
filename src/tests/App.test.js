@@ -1,37 +1,51 @@
 import React from 'react';
 import { render, fireEvent, screen } from '@testing-library/react';
-import App from './App';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import App from '../components/App';
+import rootReducer from '../reducers';
+
+const store = createStore(rootReducer);
 
 describe('App standard naviagation', () => {
   test('Renders correctly', () => {
-    const app = render(<App />);
+    const app = render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+    );
     expect(app.container.innerHTML).toContain('Champion');
   });
 
   test('Click on champions button', () => {
-    const app = render(<App />);
+    const app = render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+    );
     fireEvent.click(screen.getByText('Champions'));
     expect(app.queryByPlaceholderText('Champion name').value).toBe('');
   });
 
   test('Insert text into champions name filter', () => {
-    const app = render(<App />);
-    const input = app.queryByTestId('name-filter');
+    const app = render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+    );
+    const input = app.getByPlaceholderText('Champion name');
     fireEvent.change(input, { target: { value: 'test' } });
-    expect(app.queryByTestId('name-filter').value).toBe('test');
+    expect(app.getByPlaceholderText('Champion name').value).toBe('test');
   });
 
-  test('Insert text into champions name filter', () => {
-    const app = render(<App />);
-    const input = app.queryByTestId('name-filter');
-    fireEvent.change(input, { target: { value: 'test' } });
-    expect(app.queryByTestId('name-filter').value).toBe('test');
-  });
-
-  test('Select another champion tag filter', () => {
-    const app = render(<App />);
-    const input = app.queryByTestId('name-filter');
+  test('Select Assassin Tag Filter and expects Ahri to appears on Champion List since Ahri is an Assassin', async () => {
+    const app = render(
+      <Provider store={store}>
+        <App />
+      </Provider>,
+    );
+    const input = app.getByText('All');
     fireEvent.change(input, { target: { value: 'Assassin' } });
-    expect(app.queryByTestId('name-filter').value).not.toBe('All');
+    setTimeout(() => expect(app.container.innerHTML).toContain('Ahri'), 500);
   });
 });

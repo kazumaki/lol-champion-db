@@ -12,12 +12,12 @@ const About = () => (
         Developed with: React & Redux and a bit of HTML & CSS.
         <br />
         This project is open source feel free to contribute to the repository.
-        <a href="https://github.com/kazumaki/lol-champion-db" target="_blank" rel="noreferrer">
+        <a href="https://github.com/kazumaki/lol-champion-db" target="_blank" rel="noopener noreferrer">
           GitHub Repository.
         </a>
         <br />
         Developer:
-        <a href="https://www.linkedin.com/in/vcamposcarvalho/" target="_blank" rel="noreferrer">
+        <a href="https://www.linkedin.com/in/vcamposcarvalho/" target="_blank" rel="noopener noreferrer">
           Vinicius Campos Carvalho
         </a>
         <br />
