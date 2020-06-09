@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { requestChampions, changeSelectedChampion } from '../actions';
 import ChampionList from '../components/ChampionList';
-import MiniChampionContainer from './MiniChampionContainer';
+import MiniChampion from '../components/MiniChampion';
 
 class ChampionsContainer extends React.Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class ChampionsContainer extends React.Component {
       champion => {
         const selected = champion.name === champions.selectedChampion.name;
         return (
-          <MiniChampionContainer
+          <MiniChampion
             key={champion.name}
             handleChampionClick={this.handleChampionClick}
             champion={champion}

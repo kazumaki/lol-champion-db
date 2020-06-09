@@ -1,31 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import style from '../styles/MiniChampion.module.css';
+import MiniChampionContent from './MiniChampionContent';
 
-const MiniChampion = ({
-  styles, imageSrc, champion, handleChampionClick,
-}) => (
-  <div className={`${style.square}`}>
-    <button className={style.button} type="button" onClick={() => handleChampionClick(champion)} onKeyDown={() => handleChampionClick(champion)}>
-      <img
-        className={styles}
-        src={imageSrc}
-        alt={champion.name}
-      />
-    </button>
-    <span style={{ textAlign: 'center' }}>{champion.name}</span>
-  </div>
-);
+const imageSrc = 'http://ddragon.leagueoflegends.com/cdn/10.11.1/img/champion/';
+
+const MiniChampion = ({ champion, handleChampionClick, selected }) => {
+  const defaultStyle = `${style.image} ${style.champion}`;
+  const styles = selected ? `${defaultStyle} ${style.selected}` : defaultStyle;
+  return (
+    <MiniChampionContent handleChampionClick={handleChampionClick} styles={styles} imageSrc={`${imageSrc}${champion.image.full}`} champion={champion} />
+  );
+};
 
 MiniChampion.propTypes = {
-  styles: PropTypes.string.isRequired,
-  imageSrc: PropTypes.string.isRequired,
   champion: PropTypes.shape(
     {
-      name: PropTypes.string.isRequired,
+      image: PropTypes.shape(
+        {
+          full: PropTypes.string.isRequired,
+        },
+      ).isRequired,
     },
   ).isRequired,
   handleChampionClick: PropTypes.func.isRequired,
+  selected: PropTypes.bool.isRequired,
 };
 
 export default MiniChampion;

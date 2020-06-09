@@ -1,63 +1,76 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import OuterContainer from './OuterContainer';
-import style from '../styles/ChampionDetails.module.css';
+import ChampionDetailsContent from './ChampionDetailsContent';
+import BackButton from './BackButton';
 
-const ChampionDetails = ({ champion }) => {
-  const imageSrc = `https://ddragon.leagueoflegends.com/cdn/img/champion/loading/${champion.id}_0.jpg`;
-  return (
-    <OuterContainer>
-      <div className={style.container}>
-        <img className={style.loadingImage} src={imageSrc} alt={champion.id} />
-        <div className={style.infoContainer}>
-          <h1 className={style.championName}>{ champion.name }</h1>
-          <div className={style.infoBox}>
-            <h2>Info</h2>
-            <ul className={style.infoList}>
-              <li>{`Attack: ${champion.info.attack}`}</li>
-              <li>{`Defense: ${champion.info.defense}`}</li>
-              <li>{`Difficulty: ${champion.info.difficulty}`}</li>
-              <li>{`Magic: ${champion.info.magic}`}</li>
-            </ul>
-          </div>
-          <div className={style.infoBox}>
-            <h2>Stats</h2>
-            <ul className={style.infoList}>
-              <li>{`Health Potions: ${champion.stats.hp}`}</li>
-              <li>{`Mana Points: ${champion.stats.mp}`}</li>
-              <li>{`Attack Damage: ${champion.stats.attackdamage}`}</li>
-              <li>{`Armor: ${champion.stats.armor}`}</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </OuterContainer>
-  );
-};
+class ChampionDetailsContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      status: 'fetching',
+      champion: {},
+    };
+  }
 
-ChampionDetails.propTypes = {
-  champion: PropTypes.shape(
+  componentDidMount() {
+    const { match } = this.props;
+    const championId = match.params.id;
+
+    fetch(`https://ddragon.leagueoflegends.com/cdn/10.11.1/data/en_US/champion/${championId}.json`)
+      .then(result => result.json())
+      .then(data => {
+        this.setState({ champion: data.data[championId], status: 'success' });
+      })
+      .catch({ champion: undefined, status: 'error' });
+  }
+
+  render() {
+    const { champion, status } = this.state;
+
+    switch (status) {
+      case 'success':
+        return (
+          <OuterContainer>
+            <BackButton to="/champions" />
+            <ChampionDetailsContent champion={champion} />
+          </OuterContainer>
+        );
+
+      case 'fetching':
+        return (
+          <OuterContainer>
+            <BackButton to="/champions" />
+            <h1>Fetching</h1>
+          </OuterContainer>
+        );
+
+      case 'error':
+        return (
+          <OuterContainer>
+            <BackButton to="/champions" />
+            <h1>Error</h1>
+          </OuterContainer>
+        );
+
+      default:
+        return (
+          <h1>Unknown Error</h1>
+        );
+    }
+  }
+}
+
+ChampionDetailsContainer.propTypes = {
+  match: PropTypes.shape(
     {
-      id: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
-      info: PropTypes.shape(
+      params: PropTypes.shape(
         {
-          attack: PropTypes.number.isRequired,
-          defense: PropTypes.number.isRequired,
-          difficulty: PropTypes.number.isRequired,
-          magic: PropTypes.number.isRequired,
+          id: PropTypes.string.isRequired,
         },
-      ),
-      stats: PropTypes.shape(
-        {
-          hp: PropTypes.number.isRequired,
-          mp: PropTypes.number.isRequired,
-          attackdamage: PropTypes.number.isRequired,
-          armor: PropTypes.number.isRequired,
-        },
-      ),
+      ).isRequired,
     },
   ).isRequired,
 };
 
-export default ChampionDetails;
+export default ChampionDetailsContainer;

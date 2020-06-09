@@ -1,5 +1,5 @@
 import React from 'react';
-import CurrentChampion from './CurrentChampion';
+import CurrentChampion from '../containers/CurrentChampion';
 import ChampionsContainer from '../containers/ChampionsContainer';
 import OuterContainer from './OuterContainer';
 import FilterChampionFormContainer from '../containers/FilterChampionFormContainer';

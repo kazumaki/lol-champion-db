@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LockInButton from './LockInButton';
+import LockInButton from '../components/LockInButton';
 
 const CurrentChampion = ({ selectedChampion }) => {
   const { name } = selectedChampion;

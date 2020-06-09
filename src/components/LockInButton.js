@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import style from '../styles/LockInButton.module.css';
 
 const LockInButton = ({ selectedChampion }) => {
@@ -17,6 +18,12 @@ const LockInButton = ({ selectedChampion }) => {
   return (
     button
   );
+};
+
+LockInButton.propTypes = {
+  selectedChampion: PropTypes.shape({
+    name: PropTypes.string,
+  }).isRequired,
 };
 
 export default LockInButton;
