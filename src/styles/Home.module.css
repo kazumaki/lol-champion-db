@@ -1,0 +1,23 @@
+.button {
+  width: 200px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(253, 216, 142);
+  background-image: url('../images/play-button-lobby-default.png');
+  background-size: 100% 100%;
+}
+
+.button:hover {
+  background-image: url('../images/play-button-lobby-hover.png');
+}
+
+.logo {
+  width: 347px;
+  height: 174px;
+}
+
+.link {
+  text-decoration: none;
+}

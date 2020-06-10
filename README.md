@@ -1,68 +1,104 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# LoL Champion Database
 
-## Available Scripts
+LoL Champion Database is a simple SPA that gathers data from League of Legends API and displays it to the user.
 
-In the project directory, you can run:
+## Screenshot
 
-### `yarn start`
+![Screenshot of the webpage](images/app-screenshot.png)
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Live version
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+[Live version](https://lol-champion-db.herokuapp.com/)
 
-### `yarn test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clone the repository into your local computer.
 
-### `yarn build`
+```
+$ git clone https://github.com/kazumaki/lol-champion-db.git
+```
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Installing
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+First, you'll have to install the newest version of [Node](https://nodejs.org/en/download/). Otherwise, the npx command could not be available. Then move into the project main directory on the console and follow the instructions below. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install all packages:
 
-### `yarn eject`
+```
+$ npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Run local webserver
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+$ npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Now in your browser type the following address and press enter.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+http://127.0.0.1:5000
+```
 
-## Learn More
+### Using the App
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The App usage is really simple, the App can show you a list of all League of Legends champions, just access it and click on Champions button.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Champions list features
+* Name Filter - 1
+* Tag Filter - 2
+* Champion select to see more details - 3
 
-### Code Splitting
+![Profile Image](images/champion-list-features.png) 
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+## App Development
 
-### Analyzing the Bundle Size
+### Done
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+The goal when I started working on LoL Champion Database was to fetch the data from all League of Legends champions and display it in a cool way for the user in only 3 days, and I did. But for lack of time, I couldn't implement everything I wanted to. On the first day, I planned to show every Champion skills data like icons and descriptions inside the ChampionDetails page, but I ended showing only some basics stats of each Champion. On the first day, I focused to develop the API calls to get data from League of Legends public API and store it inside Redux store, did it in time, the second day I've focused on the style of the App and how I would display the data fetched, so I've implemented a bunch of components and containers to display all gathered data. The last day I've focused on testing the App and give the last touches to its style.
 
-### Making a Progressive Web App
+### Ideas for improvement
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+* Add more specific data for every champion
+* Get more assets for a better styling
+* Show live statistics data of champions
 
-### Advanced Configuration
+## Built With
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+* [JavaScript](https://www.javascript.com/) - Programming language used
+* [React](https://reactjs.org/) - Library used for build UI.
+* [Redux](https://redux.js.org/) - Library used to share state between React components
+* [HTML](https://en.wikipedia.org/wiki/HTML) - Hypertext Markup Language
+* [VS Code](https://code.visualstudio.com/) - The code editor used
+* [Obisidian](https://github.com/Crauzer/Obsidian/) - Tool to extract image assets from League of Legends client
 
-### Deployment
+## Assets
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+* [All assets](https://www.riotgames.com/en) - All the assets used in the app.
 
-### `yarn build` fails to minify
+## Author
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+👤 **Vinicius Campos Carvalho**
+
+<a href="https://github.com/kazumaki" rel="noopener noreferrer" target="_blank">
+
+  ![Profile Image](images/vinicius-profile.png) 
+
+</a>
+
+- Github: [@kazumaki](https://github.com/kazumaki)
+- Twitter: [@iKazumaki](https://twitter.com/iKazumaki)
+- Linkedin: [Vinicius Campos Carvalho](https://www.linkedin.com/in/vcamposcarvalho/)
+- Email: [vcampos.pitangui@gmail.com](vcampos.pitangui@gmail.com)
+
+## Presentation
+
+[Video](https://youtu.be/GQPdP4tomHs)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgments
+
+* [Project Requirements page](https://www.notion.so/Catalogue-of-Dog-Clothes-8bf1512b8ab34fa28848beb8ab698a32)
