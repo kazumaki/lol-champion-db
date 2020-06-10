@@ -93,7 +93,7 @@ The goal when I started working on LoL Champion Database was to fetch the data f
 
 ## Presentation
 
-[Video](https://youtu.be/avvIOXrD8JY)
+[Video](https://youtu.be/GQPdP4tomHs)
 
 ## License
 
