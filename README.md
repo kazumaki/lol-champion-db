@@ -66,7 +66,7 @@ The goal when I started working on LoL Champion Database was to fetch the data f
 ## Built With
 
 * [JavaScript](https://www.javascript.com/) - Programming language used
-* [React](https://reactjs.org/) - Library used for build UI.
+* [React](https://reactjs.org/) - Library used for build UI
 * [Redux](https://redux.js.org/) - Library used to share state between React components
 * [HTML](https://en.wikipedia.org/wiki/HTML) - Hypertext Markup Language
 * [VS Code](https://code.visualstudio.com/) - The code editor used
@@ -74,7 +74,7 @@ The goal when I started working on LoL Champion Database was to fetch the data f
 
 ## Assets
 
-* [All assets](https://www.riotgames.com/en) - All the assets used in the app.
+* [All assets](https://www.riotgames.com/en) - All the assets used in the app
 
 ## Author
 
