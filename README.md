@@ -20,7 +20,7 @@ $ git clone https://github.com/kazumaki/lol-champion-db.git
 
 ### Installing
 
-First, you'll have to install the newest version of [Node](https://nodejs.org/en/download/). Otherwise, the npx command could not be available. Then move into the project main directory on the console and follow the instructions below. 
+First, you'll have to install the newest version of [Node](https://nodejs.org/en/download/). Otherwise, the npx command might not be available. Then move into the project main directory on the console and follow the instructions below. 
 
 Install all packages:
 
@@ -42,7 +42,7 @@ http://127.0.0.1:5000
 
 ### Using the App
 
-The App usage is really simple, the App can show you a list of all League of Legends champions, just access it and click on Champions button.
+Using the App is really simple. It can show you a list of all League of Legends champions, just click on Champions button.
 
 #### Champions list features
 * Name Filter - 1
