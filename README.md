@@ -98,7 +98,3 @@ On the first day, I focused to develop the API calls to get data from League of 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
-
-## Acknowledgments
-
-* [Project Requirements page](https://www.notion.so/Catalogue-of-Dog-Clothes-8bf1512b8ab34fa28848beb8ab698a32)
