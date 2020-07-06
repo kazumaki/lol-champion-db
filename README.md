@@ -55,7 +55,7 @@ Using the App is really simple. It can show you a list of all League of Legends 
 
 ### Done
 
-The goal when I started working on LoL Champion Database was to fetch the data from all League of Legends champions and display it in a cool way for the user in only 3 days, and I did. But for lack of time, I couldn't implement everything I wanted to. On the first day, I planned to show every Champion skills data like icons and descriptions inside the ChampionDetails page, but I ended showing only some basics stats of each Champion. On the first day, I focused to develop the API calls to get data from League of Legends public API and store it inside Redux store, did it in time, the second day I've focused on the style of the App and how I would display the data fetched, so I've implemented a bunch of components and containers to display all gathered data. The last day I've focused on testing the App and give the last touches to its style.
+On the first day, I focused to develop the API calls to get data from League of Legends public API and store it inside the Redux store. The second day I've focused on the style of the App and how I would display the data fetched, so I've implemented a bunch of components and containers to display all gathered data. The last day I focused on testing the App and give the final touches to its style. My goal when I started working on LoL Champion Database was to fetch the data from all League of Legends champions and display it in a cool way for the user. I only had three days. But for lack of time, I couldn't implement everything I wanted to.
 
 ### Ideas for improvement
 
