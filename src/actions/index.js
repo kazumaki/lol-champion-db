@@ -4,7 +4,7 @@ export const CHANGE_SELECTED_CHAMPION = 'CHANGE_SELECTED_CHAMPION';
 export const FETCH_CHAMPIONS = 'FETCH_CHAMPIONS';
 export const FETCH_CHAMPIONS_SUCCESS = 'FETCH_CHAMPIONS_SUCCESS';
 export const FETCH_CHAMPIONS_ERROR = 'FETCH_CHAMPIONS_ERROR';
-export const apiChampions = 'https://ddragon.leagueoflegends.com/cdn/10.11.1/data/en_US/champion.json';
+export const apiChampions = 'https://ddragon.leagueoflegends.com/cdn/11.7.1/data/en_US/champion.json';
 
 export const changeNameFilter = filter => (
   {
